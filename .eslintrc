@@ -1,0 +1,48 @@
+{
+	"env": {
+		"es6": true,
+		"browser": true
+	},
+	"parser": "@typescript-eslint/parser",
+	"plugins": ["react"],
+	"rules": {
+		"no-console": ["error", { "allow": ["error"] }],
+		"no-unused-vars": 1,
+		"no-confusing-arrow": ["error", { "allowParens": true }],
+		"comma-dangle": [2, "always-multiline"],
+		"no-tabs": 0,
+		"object-curly-newline": 0,
+		"arrow-parens": [0, "as-needed"],
+		"function-paren-newline": 0,
+		"no-unused-expressions": 0,
+		"linebreak-style": 0,
+		"import/no-extraneous-dependencies": [2, {
+				"devDependencies": true,
+				"optionalDependencies": true,
+				"peerDependencies": true
+		}],
+		"import/prefer-default-export": 0,
+		"react/jsx-filename-extension": 0,
+		"react/no-unused-prop-types": 0,
+		"react/jsx-uses-react": "error",
+		"react/jsx-uses-vars": "error",
+		"react/forbid-prop-types": ["error", { "forbid": ["any", "array"] }],
+		"react/prop-types": 0,
+		"@typescript-eslint/indent": ["error", 2],
+		"@typescript-eslint/explicit-function-return-type": 0
+	},
+	"extends": ["airbnb-base", "plugin:@typescript-eslint/recommended"],
+	"settings": {
+      "import/resolver": {
+        "webpack": {
+          "config": "webpack.config.js"
+        }
+      }
+	},
+    "globals": {
+      "jest": true,
+      "expect": true,
+			"afterEach": true,
+			"test": true
+    }
+}

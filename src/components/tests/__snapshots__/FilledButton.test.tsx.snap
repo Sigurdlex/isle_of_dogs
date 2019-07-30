@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<FilledButton /> 1`] = `
+.c0 {
+  color: white;
+  font-weight: bold;
+  border: 2px solid white;
+  background: white;
+  border-radius: 4px;
+  height: 2em;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+
+.c0:hover {
+  color: white;
+  background: transparent;
+}
+
+<button
+  class="c0"
+  color="white"
+>
+  CHILDREN
+</button>
+`;

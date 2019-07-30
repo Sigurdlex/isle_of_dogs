@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ArrowButton /> left 1`] = `
+.c0 {
+  border: none;
+  font-size: 1rem;
+  padding: .5em 1em .5em 2em;
+  background: white;
+  border-radius: 1em 0 0 1em;
+  position: relative;
+}
+
+.c0:before {
+  position: absolute;
+  content: '';
+  height: 100%;
+  top: 0;
+  left: 1em;
+  width: 5px;
+  background: white;
+}
+
+<button
+  class="c0"
+  color="white"
+>
+  CHILDREN
+</button>
+`;
+
+exports[`<ArrowButton /> right 1`] = `
+.c0 {
+  border: none;
+  font-size: 1rem;
+  padding: .5em 2em .5em 1em;
+  background: white;
+  border-radius: 0 1em 1em 0;
+  position: relative;
+}
+
+.c0:before {
+  position: absolute;
+  content: '';
+  height: 100%;
+  top: 0;
+  right: 1em;
+  width: 5px;
+  background: white;
+}
+
+<button
+  class="c0"
+  color="white"
+>
+  CHILDREN
+</button>
+`;

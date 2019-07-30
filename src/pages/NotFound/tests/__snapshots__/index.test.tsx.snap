@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<NotFound /> 1`] = `
+<header
+  class="sc-htpNat etzdtK"
+>
+  <div
+    class="sc-bxivhb hzQWTh"
+  >
+    <button
+      class="sc-bdVaJa bHOSOy"
+      color="#ffbd03"
+    >
+      Back to list
+    </button>
+  </div>
+</header>
+`;

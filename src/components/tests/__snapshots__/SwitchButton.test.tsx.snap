@@ -1,0 +1,181 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SwitchButton /> left 1`] = `
+.c0 {
+  background: #e5e5e5;
+  color: rgba(0,0,0,0.5);
+  font-size: inherit;
+  padding: .5em 1em .5em 2em;
+  width: 120px;
+  border: none;
+  border-radius: 1em 0 0 1em;
+  position: relative;
+  -webkit-transition: .2s all;
+  transition: .2s all;
+  -webkit-transform-origin: 100% 50%;
+  -ms-transform-origin: 100% 50%;
+  transform-origin: 100% 50%;
+}
+
+.c0:disabled {
+  background: white;
+  color: black;
+  cursor: default;
+  -webkit-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  transform: scale(1.05);
+}
+
+.c0:before {
+  width: 6px;
+  height: 100%;
+  left: 1em;
+  position: absolute;
+  background: red;
+  content: '';
+  top: 0;
+}
+
+.c1 {
+  background: #e5e5e5;
+  color: rgba(0,0,0,0.5);
+  font-size: inherit;
+  padding: .5em 2em .5em 1em;
+  width: 120px;
+  border: none;
+  border-radius: 0 1em 1em 0;
+  position: relative;
+  -webkit-transition: .2s all;
+  transition: .2s all;
+  -webkit-transform-origin: 0 50%;
+  -ms-transform-origin: 0 50%;
+  transform-origin: 0 50%;
+}
+
+.c1:disabled {
+  background: white;
+  color: black;
+  cursor: default;
+  -webkit-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  transform: scale(1.05);
+}
+
+.c1:before {
+  width: 6px;
+  height: 100%;
+  right: 1em;
+  position: absolute;
+  background: green;
+  content: '';
+  top: 0;
+}
+
+<div>
+  <button
+    class="c0"
+    color="red"
+    data-testid="left-button"
+    disabled=""
+  >
+    leftContent
+  </button>
+  <button
+    class="c1"
+    color="green"
+    data-testid="right-button"
+  >
+    rightContent
+  </button>
+</div>
+`;
+
+exports[`<SwitchButton /> right 1`] = `
+.c0 {
+  background: #e5e5e5;
+  color: rgba(0,0,0,0.5);
+  font-size: inherit;
+  padding: .5em 1em .5em 2em;
+  width: 120px;
+  border: none;
+  border-radius: 1em 0 0 1em;
+  position: relative;
+  -webkit-transition: .2s all;
+  transition: .2s all;
+  -webkit-transform-origin: 100% 50%;
+  -ms-transform-origin: 100% 50%;
+  transform-origin: 100% 50%;
+}
+
+.c0:disabled {
+  background: white;
+  color: black;
+  cursor: default;
+  -webkit-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  transform: scale(1.05);
+}
+
+.c0:before {
+  width: 6px;
+  height: 100%;
+  left: 1em;
+  position: absolute;
+  background: red;
+  content: '';
+  top: 0;
+}
+
+.c1 {
+  background: #e5e5e5;
+  color: rgba(0,0,0,0.5);
+  font-size: inherit;
+  padding: .5em 2em .5em 1em;
+  width: 120px;
+  border: none;
+  border-radius: 0 1em 1em 0;
+  position: relative;
+  -webkit-transition: .2s all;
+  transition: .2s all;
+  -webkit-transform-origin: 0 50%;
+  -ms-transform-origin: 0 50%;
+  transform-origin: 0 50%;
+}
+
+.c1:disabled {
+  background: white;
+  color: black;
+  cursor: default;
+  -webkit-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  transform: scale(1.05);
+}
+
+.c1:before {
+  width: 6px;
+  height: 100%;
+  right: 1em;
+  position: absolute;
+  background: green;
+  content: '';
+  top: 0;
+}
+
+<div>
+  <button
+    class="c0"
+    color="red"
+    data-testid="left-button"
+  >
+    leftContent
+  </button>
+  <button
+    class="c1"
+    color="green"
+    data-testid="right-button"
+    disabled=""
+  >
+    rightContent
+  </button>
+</div>
+`;

@@ -1,0 +1,177 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<DisplayBreedsBreed /> render with emtpy initial redux state, and breed is mine 1`] = `
+.c2 {
+  color: white;
+  font-weight: bold;
+  border: 2px solid #10cd5b;
+  background: #10cd5b;
+  border-radius: 4px;
+  height: 2em;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+
+.c2:hover {
+  color: #10cd5b;
+  background: transparent;
+}
+
+.c0 {
+  padding: 0 3em;
+  height: 3em;
+  box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+  border-radius: 4px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  width: 80%;
+  margin-bottom: 1em;
+  background: white;
+  position: relative;
+  z-index: 1;
+}
+
+.c0:before,
+.c0:after {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 5px;
+  background: #3d3afd;
+}
+
+.c0:before {
+  left: 1em;
+}
+
+.c0:after {
+  right: 1em;
+}
+
+.c0:first-child {
+  margin-top: 1em;
+}
+
+.c0 > button {
+  width: 170px;
+}
+
+.c1 {
+  color: #3d3afd;
+}
+
+<div
+  class="c0"
+>
+  <a
+    class="c1"
+    href="/breed/cerberus"
+  >
+    cerberus
+  </a>
+  <button
+    class="c2"
+    color="#10cd5b"
+  >
+    Remove from favourites
+  </button>
+</div>
+`;
+
+exports[`<DisplayBreedsBreed /> render with emtpy initial redux state, and breed isn't mine 1`] = `
+.c2 {
+  color: white;
+  font-weight: bold;
+  border: 2px solid #ffbd03;
+  background: #ffbd03;
+  border-radius: 4px;
+  height: 2em;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+
+.c2:hover {
+  color: #ffbd03;
+  background: transparent;
+}
+
+.c0 {
+  padding: 0 3em;
+  height: 3em;
+  box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+  border-radius: 4px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  width: 80%;
+  margin-bottom: 1em;
+  background: white;
+  position: relative;
+  z-index: 1;
+}
+
+.c0:before,
+.c0:after {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 5px;
+  background: #3d3afd;
+}
+
+.c0:before {
+  left: 1em;
+}
+
+.c0:after {
+  right: 1em;
+}
+
+.c0:first-child {
+  margin-top: 1em;
+}
+
+.c0 > button {
+  width: 170px;
+}
+
+.c1 {
+  color: #3d3afd;
+}
+
+<div
+  class="c0"
+>
+  <a
+    class="c1"
+    href="/breed/cerberus"
+  >
+    cerberus
+  </a>
+  <button
+    class="c2"
+    color="#ffbd03"
+  >
+    Add to favourites
+  </button>
+</div>
+`;

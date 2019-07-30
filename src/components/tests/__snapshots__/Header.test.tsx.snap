@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Header /> 1`] = `
+.c0 {
+  min-width: 700px;
+  z-index: 2;
+  position: fixed;
+  background: #3d3afd;
+  height: 100px;
+  width: 100%;
+  top: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-shadow: 0 1px 15px black;
+}
+
+.c1 {
+  width: 80%;
+  margin: auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+<header
+  class="c0"
+>
+  <div
+    class="c1"
+  >
+    CHILDREN
+  </div>
+</header>
+`;
