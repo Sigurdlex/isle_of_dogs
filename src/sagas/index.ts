@@ -10,11 +10,7 @@ export function* fetchAllBreedsSaga() {
   try {
     yield put(setIsFetching(true));
     const { data: { message } } = yield call(axios.get, `${API_URL}${ALL_BREEDS_ENDP}`);
-    const breeds = Object.keys(message).map(breed => ({
-      breed,
-      isShown: true,
-      mine: false,
-    }));
+    const breeds = Object.keys(message).map(breed => ({ breed, mine: false }));
     yield all([
       put(setDisplayedBreeds(breeds)),
       put(setIsFetching(false)),
@@ -28,6 +24,9 @@ export function* fetchSingleBreedSaga(action: FetchSingleBreeds) {
   try {
     yield put(setIsFetching(true));
     const { data: { message } } = yield call(axios.get, `${API_URL}${SINGLE_BREED_ENDP(action.breed)}`);
+    message.forEach((src: string) => {
+      new Image().src = src;
+    });
     yield all([
       put(setImages(message)),
       put(setIsFetching(false)),

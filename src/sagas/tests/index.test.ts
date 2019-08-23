@@ -42,7 +42,7 @@ test('fetchAllBreedsSaga', async () => {
   expect(dispatched[0]).toEqual({ type: SET_IS_FETCHING, isFetching: true });
   expect(dispatched[1]).toEqual({
     type: SET_DISPLAYED_BREEDS,
-    displayedBreeds: [{ breed, isShown: true, mine: false }],
+    displayedBreeds: [{ breed, mine: false }],
   });
   expect(dispatched[2]).toEqual({ type: SET_IS_FETCHING, isFetching: false });
 });
@@ -56,7 +56,7 @@ test('fetchSingleBreedSaga', async () => {
       type: FETCH_SINGLE_BREED,
       breed,
     },
-  );  
+  );
   expect(axios.get).toHaveBeenCalledTimes(1);
   expect(dispatched).toHaveLength(3);
   expect(dispatched[0]).toEqual({ type: SET_IS_FETCHING, isFetching: true });

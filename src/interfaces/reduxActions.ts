@@ -19,7 +19,7 @@ export interface ChangeMyBreeds {
 export interface SetBreedsFilter {
   type: typeof T.SET_BREEDS_FILTER;
   filter: 'mine' | 'all';
-};
+}
 export interface EnterSearch {
   type: typeof T.ENTER_SEARCH;
   searchString: string;

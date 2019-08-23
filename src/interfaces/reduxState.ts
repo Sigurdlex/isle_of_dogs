@@ -2,7 +2,6 @@ import { RouterState } from 'connected-react-router';
 
 export interface Breed {
   breed: string;
-  isShown: boolean;
   mine: boolean;
 }
 

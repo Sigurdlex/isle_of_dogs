@@ -73,7 +73,7 @@ export const DisplayedBreeds = (props: DisplayedBreedsProps) => {
       <Container color={color}>
         {isFetching
           ? <Spinner color={color} />
-          : displayedBreeds.map(({ breed, isShown, mine }) => isShown && (
+          : displayedBreeds.map(({ breed, mine }) => (
             <DisplayedBreedsBreed
               breed={breed}
               key={breed}

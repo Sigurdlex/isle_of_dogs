@@ -1,18 +1,18 @@
 import { push } from 'connected-react-router';
 import React, { useState, useEffect, useCallback, useMemo } from 'react';
+import { useTransition, animated } from 'react-spring';
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
 import styled from 'styled-components';
 
-import { getImages, getIsFetching, getPathname } from 'selectors';
+import { getImages, getPathname } from 'selectors';
+import { setImages, fetchSingleBreeds } from 'actionCreators';
 import { LIGHTGRAY } from 'constants/colors';
 import { Header, ArrowButton, Spinner } from 'components';
 import { State } from 'interfaces';
-import { fetchSingleBreeds } from 'actionCreators';
 
 interface SingleBreedProps {
   images: string[];
-  isFetching: boolean;
   dispatch: Dispatch;
   pathname: string;
 }
@@ -20,11 +20,9 @@ interface SingleBreedProps {
 const SingleBreed = (props: SingleBreedProps) => {
   const {
     images,
-    isFetching,
     dispatch,
     pathname,
   } = props;
-
   const [imageNum, setImageNum] = useState(0);
   const handleBackClick = useCallback(() => dispatch(push('/')), []);
   const handleNextClick = useCallback(
@@ -43,9 +41,18 @@ const SingleBreed = (props: SingleBreedProps) => {
   useEffect(
     () => {
       if (Array.isArray(breed)) dispatch(fetchSingleBreeds(breed[0]));
+      return () => {
+        dispatch(setImages([]));
+      };
     },
     [breed],
   );
+  const transitions = useTransition(imageNum, k => k, {
+    from: { opacity: 0 },
+    enter: { opacity: 1 },
+    leave: { opacity: 0 },
+  });
+
   return (
     <>
       <Header>
@@ -59,7 +66,7 @@ const SingleBreed = (props: SingleBreedProps) => {
         <NameH1>{breed}</NameH1>
       </Header>
       <Container>
-        {isFetching
+        {!images.length
           ? <Spinner color={LIGHTGRAY} />
           : (
             <>
@@ -70,7 +77,13 @@ const SingleBreed = (props: SingleBreedProps) => {
               >
                 Previous
               </ArrowButton>
-              <Image src={images[imageNum]} />
+              {transitions.map(({ item, props: style, key }) => (
+                <Image
+                  src={images[item]}
+                  style={style}
+                  key={key}
+                />
+              ))}
               <ArrowButton
                 color={LIGHTGRAY}
                 handleClick={handleNextClick}
@@ -87,7 +100,6 @@ const SingleBreed = (props: SingleBreedProps) => {
 
 const mapStateToProps = (state: State) => ({
   pathname: getPathname(state),
-  isFetching: getIsFetching(state),
   images: getImages(state),
 });
 
@@ -107,12 +119,17 @@ const Container = styled.div`
   }
 `;
 
-const Image = styled.img`
+const Image = styled(animated.img)`
   border: 10px solid white;
   border-radius: 4px;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-  max-width: calc(80vw - 300px);
+  max-width: calc(80vw - 350px);
+  max-height: calc((100% - 100px) * .75);
   min-width: 260px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate3d(-50%, calc(-50% + 50px), 0);
 `;
 
 const NameH1 = styled.h1`

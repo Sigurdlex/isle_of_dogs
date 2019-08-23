@@ -11,10 +11,11 @@ export const getSearch: Selector<string> = ({ breeds: { searchString } }) => sea
 
 export const getBreeds = createSelector(
   getFilter, getDisplayedBreeds, getSearch,
-  (filter, displayedBreeds, searchString) => {
-    const breeds = filter === 'all' ? displayedBreeds : displayedBreeds.filter(breed => breed.mine);
-    return breeds.filter(breed => breed.breed.includes(searchString));
-  }
+  (filter, displayedBreeds, searchString) => displayedBreeds.filter(({ breed, mine }) => {
+    const isSearched = breed.includes(searchString);
+    const isFilteredIn = filter === 'all' || mine;
+    return isSearched && isFilteredIn;
+  }),
 );
 export const getColor = createSelector(
   getFilter,
