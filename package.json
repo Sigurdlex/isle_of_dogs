@@ -19,6 +19,10 @@
       "eslint",
       "stylelint --config .stylelintrc.json",
       "git add"
+    ],
+    "**/*.{!ts(x)}": [
+      "prettier --write",
+      "git add"
     ]
   },
   "husky": {
