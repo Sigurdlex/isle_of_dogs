@@ -17,7 +17,8 @@
     "**/*.{ts,tsx}": [
       "prettier --write",
       "eslint",
-      "stylelint --config .stylelintrc.json"
+      "stylelint --config .stylelintrc.json",
+      "git add"
     ]
   },
   "husky": {
