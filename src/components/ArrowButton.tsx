@@ -9,14 +9,8 @@ interface ArrowButtonProps {
 }
 type ContainerProps = Pick<ArrowButtonProps, 'color' | 'isLeft'>;
 
-export const ArrowButton = (
-  { children, handleClick, color, isLeft = false }: ArrowButtonProps
-) => (
-  <Container
-    isLeft={isLeft}
-    onClick={handleClick}
-    color={color}
-  >
+export const ArrowButton = ({ children, handleClick, color, isLeft = false }: ArrowButtonProps) => (
+  <Container isLeft={isLeft} onClick={handleClick} color={color}>
     {children}
   </Container>
 );
@@ -28,7 +22,7 @@ const Container = styled.button<ContainerProps>`
   background: white;
   border-radius: ${({ isLeft }) => (isLeft ? '1em 0 0 1em' : '0 1em 1em 0')};
   position: relative;
-  &:before {
+  &::before {
     position: absolute;
     content: '';
     height: 100%;

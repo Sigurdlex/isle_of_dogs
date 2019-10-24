@@ -31,13 +31,15 @@ const GlobalStyles = createGlobalStyle`
   html {
     font-size: 20px;
   }
-  
+
   body {
     margin: 0;
     box-sizing: border-box;
 	}
 
-	*, *:after, *:before {
+	*, 
+  *::after,
+  *::before {
 	  box-sizing: inherit;
 	  outline: none;
 	}

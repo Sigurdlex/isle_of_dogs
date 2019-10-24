@@ -1,17 +1,23 @@
 import axios from 'axios';
-import { runSaga } from 'redux-saga';
+import { runSaga, SagaIterator } from 'redux-saga';
 import { Action } from 'redux';
 
-import { FETCH_ALL_BREEDS, SET_IS_FETCHING, SET_DISPLAYED_BREEDS, FETCH_SINGLE_BREED, SET_IMAGES } from 'constants/actionTypes';
+import {
+  FETCH_ALL_BREEDS,
+  SET_IS_FETCHING,
+  SET_DISPLAYED_BREEDS,
+  FETCH_SINGLE_BREED,
+  SET_IMAGES,
+} from 'constants/actionTypes';
 import { FetchAllBreeds, FetchSingleBreeds } from 'interfaces';
 import { fetchAllBreedsSaga, fetchSingleBreedSaga } from '..';
 
 jest.mock('axios');
 
-const mockedGet = axios.get as typeof axios.get & { mockReturnValue: (arg: {}) => void};
+const mockedGet = axios.get as typeof axios.get & { mockReturnValue: (arg: {}) => void };
 
 export const recordSaga = async <A>(
-  saga: (arg1: A) => Iterator<{}>,
+  saga: (arg1: A) => SagaIterator<void>,
   initialAction: A,
 ): Promise<Action[]> => {
   const dispatched: Action[] = [];
@@ -21,7 +27,7 @@ export const recordSaga = async <A>(
     },
     saga,
     initialAction,
-  ).done;
+  );
   return dispatched;
 };
 
@@ -31,12 +37,9 @@ test('fetchAllBreedsSaga', async () => {
   const breed = 'cerberus';
   const mockedResponse = { [breed]: breed };
   mockedGet.mockReturnValue({ data: { message: mockedResponse } });
-  const dispatched = await recordSaga<FetchAllBreeds>(
-    fetchAllBreedsSaga,
-    {
-      type: FETCH_ALL_BREEDS,
-    },
-  );
+  const dispatched = await recordSaga<FetchAllBreeds>(fetchAllBreedsSaga, {
+    type: FETCH_ALL_BREEDS,
+  });
   expect(axios.get).toHaveBeenCalledTimes(1);
   expect(dispatched).toHaveLength(3);
   expect(dispatched[0]).toEqual({ type: SET_IS_FETCHING, isFetching: true });
@@ -50,13 +53,10 @@ test('fetchAllBreedsSaga', async () => {
 test('fetchSingleBreedSaga', async () => {
   const breed = 'cerberus';
   mockedGet.mockReturnValue({ data: { message: [breed] } });
-  const dispatched = await recordSaga<FetchSingleBreeds>(
-    fetchSingleBreedSaga,
-    {
-      type: FETCH_SINGLE_BREED,
-      breed,
-    },
-  );
+  const dispatched = await recordSaga<FetchSingleBreeds>(fetchSingleBreedSaga, {
+    type: FETCH_SINGLE_BREED,
+    breed,
+  });
   expect(axios.get).toHaveBeenCalledTimes(1);
   expect(dispatched).toHaveLength(3);
   expect(dispatched[0]).toEqual({ type: SET_IS_FETCHING, isFetching: true });

@@ -12,15 +12,11 @@ interface NotFoundProps {
 }
 
 export const NotFound = ({ dispatch }: NotFoundProps) => {
-  const handleGoToMain = useCallback(() => dispatch(push('/')), []);
+  const handleGoToMain = useCallback(() => dispatch(push('/')), [dispatch]);
   return (
     <>
       <Header>
-        <ArrowButton
-          isLeft
-          handleClick={handleGoToMain}
-          color={ORANGE}
-        >
+        <ArrowButton isLeft handleClick={handleGoToMain} color={ORANGE}>
           Back to list
         </ArrowButton>
       </Header>
@@ -47,8 +43,8 @@ const ErrorH1 = styled.h1`
   margin: auto;
   background: white;
   border-radius: 4px;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, .5);
-  font-family: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+  font-family: 'Franklin Gothic Medium', 'Franklin Gothic', 'ITC Franklin Gothic', Arial, sans-serif;
   font-size: 3rem;
   padding: 0.5em;
 `;

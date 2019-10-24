@@ -16,17 +16,11 @@ export interface DisplayedBreedsBreedProps {
 
 export const DisplayedBreedsBreed = (props: DisplayedBreedsBreedProps) => {
   const { breed, mine, dispatch } = props;
-  const handleToggleClick = useCallback(
-    () => dispatch(changeMyBreeds(breed)),
-    [breed],
-  );
+  const handleToggleClick = useCallback(() => dispatch(changeMyBreeds(breed)), [breed, dispatch]);
   return (
     <Container>
       <StyledLink to={`/breed/${breed}`}>{breed}</StyledLink>
-      <FilledButton
-        color={mine ? LIMEGREEN : ORANGE}
-        handleClick={handleToggleClick}
-      >
+      <FilledButton color={mine ? LIMEGREEN : ORANGE} handleClick={handleToggleClick}>
         {mine ? 'Remove from favourites' : 'Add to favourites'}
       </FilledButton>
     </Container>
@@ -44,29 +38,30 @@ const Container = styled.div`
   align-items: center;
   justify-content: space-between;
   width: 80%;
-	margin-bottom: 1em;
-	background: white;
-	position: relative;
-	z-index: 1;
-	&:before, &:after {
-	  content: '';
-	  position: absolute;
-	  height: 100%;
-	  width: 5px;
-	  background: ${ROYALBLUE};
-	}
-	&:before {
-	  left: 1em;
-	}
-	&:after {
-	  right: 1em;
-	}
-	&:first-child {
-	  margin-top: 1em;
-	}
-	& > button {
-	  width: 170px;
-	}
+  margin-bottom: 1em;
+  background: white;
+  position: relative;
+  z-index: 1;
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 5px;
+    background: ${ROYALBLUE};
+  }
+  &::before {
+    left: 1em;
+  }
+  &::after {
+    right: 1em;
+  }
+  &:first-child {
+    margin-top: 1em;
+  }
+  & > button {
+    width: 170px;
+  }
 `;
 
 const StyledLink = styled(Link)`

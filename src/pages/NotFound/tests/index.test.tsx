@@ -7,10 +7,12 @@ import NotFound from '..';
 
 test('<NotFound />', () => {
   const store = configureStore();
-  const { container: { firstChild: container } } = render(
+  const {
+    container: { firstChild: container },
+  } = render(
     <Provider store={store}>
       <NotFound />
-    </Provider>
+    </Provider>,
   );
   expect(container).toMatchSnapshot();
 });

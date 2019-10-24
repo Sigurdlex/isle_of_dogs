@@ -6,9 +6,10 @@ import { fetching } from './fetching';
 import { breed } from './breed';
 import { breeds } from './breeds';
 
-export const reducers = (history: History) => combineReducers({
-  breeds,
-  breed,
-  fetching,
-  router: connectRouter(history),
-});
+export const reducers = (history: History) =>
+  combineReducers({
+    breeds,
+    breed,
+    fetching,
+    router: connectRouter(history),
+  });

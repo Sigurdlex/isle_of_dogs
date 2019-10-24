@@ -11,9 +11,9 @@ const CHILDREN = 'CHILDREN';
 
 test('<ArrowButton /> left', () => {
   const { container } = render(
-    <ArrowButton handleClick={handleClick} color='white' isLeft>
+    <ArrowButton handleClick={handleClick} color="white" isLeft>
       {CHILDREN}
-    </ArrowButton>
+    </ArrowButton>,
   );
   const element: HTMLButtonElement = container.firstChild as HTMLButtonElement;
   expect(element.textContent).toMatch(CHILDREN);
@@ -25,10 +25,12 @@ test('<ArrowButton /> left', () => {
 });
 
 test('<ArrowButton /> right', () => {
-  const { container: { firstChild: container } } = render(
-    <ArrowButton handleClick={handleClick} color='white'>
+  const {
+    container: { firstChild: container },
+  } = render(
+    <ArrowButton handleClick={handleClick} color="white">
       {CHILDREN}
-    </ArrowButton>
+    </ArrowButton>,
   );
   expect(container).toHaveStyleRule('padding', '.5em 2em .5em 1em');
   expect(container).toHaveStyleRule('border-radius', '0 1em 1em 0');

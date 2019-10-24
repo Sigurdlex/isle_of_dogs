@@ -3,11 +3,7 @@ import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
 import styled from 'styled-components';
 
-import {
-  fetchAllBreeds,
-  enterSearch,
-  setBreedsFilter,
-} from 'actionCreators';
+import { fetchAllBreeds, enterSearch, setBreedsFilter } from 'actionCreators';
 import { ORANGE, LIMEGREEN } from 'constants/colors';
 import { TextInput, SwitchButton, Spinner, Header } from 'components';
 import { Breed, State } from 'interfaces';
@@ -24,42 +20,21 @@ interface DisplayedBreedsProps {
 }
 
 export const DisplayedBreeds = (props: DisplayedBreedsProps) => {
-  const {
-    displayedBreeds,
-    filter,
-    color,
-    dispatch,
-    searchString,
-    isFetching,
-  } = props;
+  const { displayedBreeds, filter, color, dispatch, searchString, isFetching } = props;
 
-  const handleChange = useCallback(
-    ({ target: { value } }) => dispatch(enterSearch(value)),
-    [dispatch],
-  );
-  const handleAllClick = useCallback(
-    () => dispatch(setBreedsFilter('all')),
-    [dispatch],
-  );
-  const handleMineClick = useCallback(
-    () => dispatch(setBreedsFilter('mine')),
-    [dispatch],
-  );
-  useEffect(
-    () => {
-      dispatch(fetchAllBreeds());
-    },
-    []
-  );
+  const handleChange = useCallback(({ target: { value } }) => dispatch(enterSearch(value)), [
+    dispatch,
+  ]);
+  const handleAllClick = useCallback(() => dispatch(setBreedsFilter('all')), [dispatch]);
+  const handleMineClick = useCallback(() => dispatch(setBreedsFilter('mine')), [dispatch]);
+  useEffect(() => {
+    dispatch(fetchAllBreeds());
+  }, [dispatch]);
 
   return (
     <>
       <Header>
-        <TextInput
-          placeholder="Search"
-          handleChange={handleChange}
-          value={searchString}
-        />
+        <TextInput placeholder="Search" handleChange={handleChange} value={searchString} />
         <SwitchButton
           isLeft={filter === 'all'}
           leftColor={ORANGE}
@@ -71,16 +46,13 @@ export const DisplayedBreeds = (props: DisplayedBreedsProps) => {
         />
       </Header>
       <Container color={color}>
-        {isFetching
-          ? <Spinner color={color} />
-          : displayedBreeds.map(({ breed, mine }) => (
-            <DisplayedBreedsBreed
-              breed={breed}
-              key={breed}
-              mine={mine}
-            />
+        {isFetching ? (
+          <Spinner color={color} />
+        ) : (
+          displayedBreeds.map(({ breed, mine }) => (
+            <DisplayedBreedsBreed breed={breed} key={breed} mine={mine} />
           ))
-        }
+        )}
       </Container>
     </>
   );

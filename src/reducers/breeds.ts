@@ -35,6 +35,7 @@ export const breeds = (state = initialState, action: BreedsReduxAction): BreedsS
     case ENTER_SEARCH:
       return { ...state, searchString: action.searchString };
 
-    default: return state;
+    default:
+      return state;
   }
 };

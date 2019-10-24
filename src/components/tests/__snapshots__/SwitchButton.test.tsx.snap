@@ -10,8 +10,8 @@ exports[`<SwitchButton /> left 1`] = `
   border: none;
   border-radius: 1em 0 0 1em;
   position: relative;
-  -webkit-transition: .2s all;
-  transition: .2s all;
+  -webkit-transition: 0.2s all;
+  transition: 0.2s all;
   -webkit-transform-origin: 100% 50%;
   -ms-transform-origin: 100% 50%;
   transform-origin: 100% 50%;
@@ -26,7 +26,7 @@ exports[`<SwitchButton /> left 1`] = `
   transform: scale(1.05);
 }
 
-.c0:before {
+.c0::before {
   width: 6px;
   height: 100%;
   left: 1em;
@@ -45,8 +45,8 @@ exports[`<SwitchButton /> left 1`] = `
   border: none;
   border-radius: 0 1em 1em 0;
   position: relative;
-  -webkit-transition: .2s all;
-  transition: .2s all;
+  -webkit-transition: 0.2s all;
+  transition: 0.2s all;
   -webkit-transform-origin: 0 50%;
   -ms-transform-origin: 0 50%;
   transform-origin: 0 50%;
@@ -61,7 +61,7 @@ exports[`<SwitchButton /> left 1`] = `
   transform: scale(1.05);
 }
 
-.c1:before {
+.c1::before {
   width: 6px;
   height: 100%;
   right: 1em;
@@ -100,8 +100,8 @@ exports[`<SwitchButton /> right 1`] = `
   border: none;
   border-radius: 1em 0 0 1em;
   position: relative;
-  -webkit-transition: .2s all;
-  transition: .2s all;
+  -webkit-transition: 0.2s all;
+  transition: 0.2s all;
   -webkit-transform-origin: 100% 50%;
   -ms-transform-origin: 100% 50%;
   transform-origin: 100% 50%;
@@ -116,7 +116,7 @@ exports[`<SwitchButton /> right 1`] = `
   transform: scale(1.05);
 }
 
-.c0:before {
+.c0::before {
   width: 6px;
   height: 100%;
   left: 1em;
@@ -135,8 +135,8 @@ exports[`<SwitchButton /> right 1`] = `
   border: none;
   border-radius: 0 1em 1em 0;
   position: relative;
-  -webkit-transition: .2s all;
-  transition: .2s all;
+  -webkit-transition: 0.2s all;
+  transition: 0.2s all;
   -webkit-transform-origin: 0 50%;
   -ms-transform-origin: 0 50%;
   transform-origin: 0 50%;
@@ -151,7 +151,7 @@ exports[`<SwitchButton /> right 1`] = `
   transform: scale(1.05);
 }
 
-.c1:before {
+.c1::before {
   width: 6px;
   height: 100%;
   right: 1em;

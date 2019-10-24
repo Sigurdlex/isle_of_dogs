@@ -16,21 +16,21 @@ exports[`<Spinner /> 1`] = `
 }
 
 .c0,
-.c0:before,
-.c0:after {
+.c0::before,
+.c0::after {
   border-radius: 50%;
   position: absolute;
 }
 
-.c0:before,
-.c0:after {
+.c0::before,
+.c0::after {
   content: '';
   background: white;
   width: 5.2em;
   height: 10.2em;
 }
 
-.c0:before {
+.c0::before {
   border-radius: 10.2em 0 0 10.2em;
   top: -0.1em;
   left: -0.1em;
@@ -41,9 +41,9 @@ exports[`<Spinner /> 1`] = `
   animation: load2 2s infinite ease 1.5s;
 }
 
-.c0:after {
+.c0::after {
   border-radius: 0 10.2em 10.2em 0;
-  top: -.1em;
+  top: -0.1em;
   left: 5.1em;
   -webkit-transform-origin: 0 5.1em;
   -ms-transform-origin: 0 5.1em;

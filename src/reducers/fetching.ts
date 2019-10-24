@@ -10,6 +10,7 @@ export const fetching = (state = initialState, action: SetIsFetching): FetchingS
     case SET_IS_FETCHING:
       return { ...state, isFetching: action.isFetching };
 
-    default: return state;
+    default:
+      return state;
   }
 };

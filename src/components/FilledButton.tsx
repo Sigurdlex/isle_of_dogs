@@ -8,13 +8,8 @@ interface FilledButtonProps {
 }
 type ContainerProps = Pick<FilledButtonProps, 'color'>;
 
-export const FilledButton = (
-  { children, handleClick, color }: FilledButtonProps
-) => (
-  <Container
-    onClick={handleClick}
-    color={color}
-  >
+export const FilledButton = ({ children, handleClick, color }: FilledButtonProps) => (
+  <Container onClick={handleClick} color={color}>
     {children}
   </Container>
 );
@@ -26,7 +21,7 @@ const Container = styled.button<ContainerProps>`
   background: ${({ color }) => color};
   border-radius: 4px;
   height: 2em;
-  transition: all .2s;
+  transition: all 0.2s;
   &:hover {
     color: ${({ color }) => color};
     background: transparent;

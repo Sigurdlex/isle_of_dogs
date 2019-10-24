@@ -18,35 +18,24 @@ interface SingleBreedProps {
 }
 
 const SingleBreed = (props: SingleBreedProps) => {
-  const {
-    images,
-    dispatch,
-    pathname,
-  } = props;
+  const { images, dispatch, pathname } = props;
   const [imageNum, setImageNum] = useState(0);
-  const handleBackClick = useCallback(() => dispatch(push('/')), []);
+  const handleBackClick = useCallback(() => dispatch(push('/')), [dispatch]);
   const handleNextClick = useCallback(
-    () => setImageNum(state => (
-      state < images.length - 1 ? state + 1 : 0
-    )),
-    [setImageNum, images]
+    () => setImageNum(state => (state < images.length - 1 ? state + 1 : 0)),
+    [setImageNum, images],
   );
   const handlePrevClick = useCallback(
-    () => setImageNum(state => (
-      state > 0 ? state - 1 : images.length - 1
-    )),
-    [setImageNum, images]
+    () => setImageNum(state => (state > 0 ? state - 1 : images.length - 1)),
+    [setImageNum, images],
   );
   const breed = useMemo(() => pathname.match(/\w+$/), [pathname]);
-  useEffect(
-    () => {
-      if (Array.isArray(breed)) dispatch(fetchSingleBreeds(breed[0]));
-      return () => {
-        dispatch(setImages([]));
-      };
-    },
-    [breed],
-  );
+  useEffect(() => {
+    if (Array.isArray(breed)) dispatch(fetchSingleBreeds(breed[0]));
+    return () => {
+      dispatch(setImages([]));
+    };
+  }, [breed, dispatch]);
   const transitions = useTransition(imageNum, k => k, {
     from: { opacity: 0 },
     enter: { opacity: 1 },
@@ -56,43 +45,27 @@ const SingleBreed = (props: SingleBreedProps) => {
   return (
     <>
       <Header>
-        <ArrowButton
-          isLeft
-          color={LIGHTGRAY}
-          handleClick={handleBackClick}
-        >
+        <ArrowButton isLeft color={LIGHTGRAY} handleClick={handleBackClick}>
           Back to list
         </ArrowButton>
         <NameH1>{breed}</NameH1>
       </Header>
       <Container>
-        {!images.length
-          ? <Spinner color={LIGHTGRAY} />
-          : (
-            <>
-              <ArrowButton
-                isLeft
-                color={LIGHTGRAY}
-                handleClick={handlePrevClick}
-              >
-                Previous
-              </ArrowButton>
-              {transitions.map(({ item, props: style, key }) => (
-                <Image
-                  src={images[item]}
-                  style={style}
-                  key={key}
-                />
-              ))}
-              <ArrowButton
-                color={LIGHTGRAY}
-                handleClick={handleNextClick}
-              >
-                Next
-              </ArrowButton>
-            </>
-          )
-        }
+        {!images.length ? (
+          <Spinner color={LIGHTGRAY} />
+        ) : (
+          <>
+            <ArrowButton isLeft color={LIGHTGRAY} handleClick={handlePrevClick}>
+              Previous
+            </ArrowButton>
+            {transitions.map(({ item, props: style, key }) => (
+              <Image src={images[item]} style={style} key={key} />
+            ))}
+            <ArrowButton color={LIGHTGRAY} handleClick={handleNextClick}>
+              Next
+            </ArrowButton>
+          </>
+        )}
       </Container>
     </>
   );
@@ -124,7 +97,7 @@ const Image = styled(animated.img)`
   border-radius: 4px;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
   max-width: calc(80vw - 350px);
-  max-height: calc((100% - 100px) * .75);
+  max-height: calc((100% - 100px) * 0.75);
   min-width: 260px;
   position: absolute;
   left: 50%;
@@ -133,7 +106,7 @@ const Image = styled(animated.img)`
 `;
 
 const NameH1 = styled.h1`
-  font-family: "Brush Script MT", cursive;
+  font-family: 'Brush Script MT', cursive;
   font-size: 3rem;
   margin: 0;
   text-transform: capitalize;

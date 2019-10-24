@@ -10,6 +10,7 @@ export const breed = (state = initialState, action: BreedReduxAction): BreedStat
     case SET_IMAGES:
       return { ...state, images: action.images };
 
-    default: return state;
+    default:
+      return state;
   }
 };

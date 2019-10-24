@@ -8,8 +8,8 @@ exports[`<FilledButton /> 1`] = `
   background: white;
   border-radius: 4px;
   height: 2em;
-  -webkit-transition: all .2s;
-  transition: all .2s;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .c0:hover {

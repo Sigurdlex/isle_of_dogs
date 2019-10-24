@@ -8,8 +8,8 @@ exports[`<DisplayBreedsBreed /> render with emtpy initial redux state, and breed
   background: #10cd5b;
   border-radius: 4px;
   height: 2em;
-  -webkit-transition: all .2s;
-  transition: all .2s;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .c2:hover {
@@ -41,8 +41,8 @@ exports[`<DisplayBreedsBreed /> render with emtpy initial redux state, and breed
   z-index: 1;
 }
 
-.c0:before,
-.c0:after {
+.c0::before,
+.c0::after {
   content: '';
   position: absolute;
   height: 100%;
@@ -50,11 +50,11 @@ exports[`<DisplayBreedsBreed /> render with emtpy initial redux state, and breed
   background: #3d3afd;
 }
 
-.c0:before {
+.c0::before {
   left: 1em;
 }
 
-.c0:after {
+.c0::after {
   right: 1em;
 }
 
@@ -96,8 +96,8 @@ exports[`<DisplayBreedsBreed /> render with emtpy initial redux state, and breed
   background: #ffbd03;
   border-radius: 4px;
   height: 2em;
-  -webkit-transition: all .2s;
-  transition: all .2s;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .c2:hover {
@@ -129,8 +129,8 @@ exports[`<DisplayBreedsBreed /> render with emtpy initial redux state, and breed
   z-index: 1;
 }
 
-.c0:before,
-.c0:after {
+.c0::before,
+.c0::after {
   content: '';
   position: absolute;
   height: 100%;
@@ -138,11 +138,11 @@ exports[`<DisplayBreedsBreed /> render with emtpy initial redux state, and breed
   background: #3d3afd;
 }
 
-.c0:before {
+.c0::before {
   left: 1em;
 }
 
-.c0:after {
+.c0::after {
   right: 1em;
 }
 

@@ -14,11 +14,14 @@ afterEach(() => {
   cleanup();
 });
 
-test('<DisplayBreedsBreed /> render with emtpy initial redux state, and breed isn\'t mine', () => {
-  const { getByText, container: { firstChild: container } } = render(
+test("<DisplayBreedsBreed /> render with emtpy initial redux state, and breed isn't mine", () => {
+  const {
+    getByText,
+    container: { firstChild: container },
+  } = render(
     <MemoryRouter>
       <DisplayedBreedsBreed breed={breed} mine={false} dispatch={dispatch} />
-    </MemoryRouter>
+    </MemoryRouter>,
   );
   const button: HTMLButtonElement = getByText('Add to favourites') as HTMLButtonElement;
   expect(button).toHaveStyleRule('background', ORANGE);
@@ -26,10 +29,13 @@ test('<DisplayBreedsBreed /> render with emtpy initial redux state, and breed is
 });
 
 test('<DisplayBreedsBreed /> render with emtpy initial redux state, and breed is mine', () => {
-  const { getByText, container: { firstChild: container } } = render(
+  const {
+    getByText,
+    container: { firstChild: container },
+  } = render(
     <MemoryRouter>
       <DisplayedBreedsBreed breed={breed} mine dispatch={dispatch} />
-    </MemoryRouter>
+    </MemoryRouter>,
   );
   const button: HTMLButtonElement = getByText('Remove from favourites') as HTMLButtonElement;
   expect(button).toHaveStyleRule('background', LIMEGREEN);

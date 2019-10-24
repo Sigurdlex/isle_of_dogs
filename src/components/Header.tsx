@@ -5,9 +5,7 @@ import { ROYALBLUE } from 'constants/colors';
 
 export const Header = ({ children }: { children: ReactNode }) => (
   <ContainerHeader>
-    <Content>
-      {children}
-    </Content>
+    <Content>{children}</Content>
   </ContainerHeader>
 );
 

@@ -52,9 +52,9 @@ const Button = styled.button<ButtonProps>`
   padding: ${({ left }) => (left ? '.5em 1em .5em 2em' : '.5em 2em .5em 1em')};
   width: 120px;
   border: none;
-  border-radius:  ${({ left }) => (left ? '1em 0 0 1em' : '0 1em 1em 0')};
+  border-radius: ${({ left }) => (left ? '1em 0 0 1em' : '0 1em 1em 0')};
   position: relative;
-  transition: .2s all;
+  transition: 0.2s all;
   transform-origin: ${({ left }) => (left ? '100%' : 0)} 50%;
   &:disabled {
     background: white;
@@ -62,7 +62,7 @@ const Button = styled.button<ButtonProps>`
     cursor: default;
     transform: scale(1.05);
   }
-  &:before {
+  &::before {
     width: 6px;
     height: 100%;
     ${({ left }) => (left ? 'left' : 'right')}: 1em;

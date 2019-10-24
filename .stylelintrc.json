@@ -1,0 +1,13 @@
+{
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-styled-components",
+    "stylelint-config-prettier"
+  ],
+  "processors": ["stylelint-processor-styled-components"],
+  "rules": {
+    "color-hex-length": "long",
+    "indentation": null,
+    "declaration-empty-line-before": null
+  }
+}

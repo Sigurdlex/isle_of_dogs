@@ -7,7 +7,7 @@ import { Spinner } from '../Spinner';
 afterEach(cleanup);
 
 test('<Spinner />', () => {
-  const { container } = render(<Spinner color='white' />);
+  const { container } = render(<Spinner color="white" />);
   const element: HTMLElement = container.firstChild as HTMLElement;
   expect(element).toMatchSnapshot();
 });

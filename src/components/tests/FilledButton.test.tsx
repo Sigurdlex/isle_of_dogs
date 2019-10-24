@@ -14,7 +14,7 @@ test('<FilledButton />', () => {
   const { container } = render(
     <FilledButton handleClick={handleClick} color={COLOR}>
       {CHILDREN}
-    </FilledButton>
+    </FilledButton>,
   );
   const element: HTMLButtonElement = container.firstChild as HTMLButtonElement;
   expect(element.textContent).toMatch(CHILDREN);

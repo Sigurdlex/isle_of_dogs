@@ -8,11 +8,7 @@ interface InputProps {
 }
 
 export const TextInput = ({ placeholder = '', handleChange, value }: InputProps) => (
-  <StyledInput
-    value={value}
-    onChange={handleChange}
-    placeholder={placeholder}
-  />
+  <StyledInput value={value} onChange={handleChange} placeholder={placeholder} />
 );
 
 const StyledInput = styled.input`

@@ -10,7 +10,7 @@ exports[`<ArrowButton /> left 1`] = `
   position: relative;
 }
 
-.c0:before {
+.c0::before {
   position: absolute;
   content: '';
   height: 100%;
@@ -38,7 +38,7 @@ exports[`<ArrowButton /> right 1`] = `
   position: relative;
 }
 
-.c0:before {
+.c0::before {
   position: absolute;
   content: '';
   height: 100%;

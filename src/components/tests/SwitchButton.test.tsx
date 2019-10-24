@@ -27,7 +27,7 @@ test('<SwitchButton /> left', () => {
       rightColor={rightColor}
       rightContent={rightContent}
       isLeft
-    />
+    />,
   );
   const element = container.firstChild as HTMLElement;
   const leftButton: HTMLButtonElement = getByTestId('left-button') as HTMLButtonElement;
@@ -51,7 +51,10 @@ test('<SwitchButton /> left', () => {
 });
 
 test('<SwitchButton /> right', () => {
-  const { getByTestId, container: { firstChild: container } } = render(
+  const {
+    getByTestId,
+    container: { firstChild: container },
+  } = render(
     <SwitchButton
       handleLeftClick={handleLeftClick}
       leftColor={leftColor}
@@ -60,7 +63,7 @@ test('<SwitchButton /> right', () => {
       rightColor={rightColor}
       rightContent={rightContent}
       isLeft={false}
-    />
+    />,
   );
   const leftButton: HTMLButtonElement = getByTestId('left-button') as HTMLButtonElement;
   const rightButton: HTMLButtonElement = getByTestId('right-button') as HTMLButtonElement;
