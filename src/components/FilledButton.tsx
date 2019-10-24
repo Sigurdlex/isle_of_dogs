@@ -15,7 +15,7 @@ export const FilledButton = ({ children, handleClick, color }: FilledButtonProps
 );
 
 const Container = styled.button<ContainerProps>`
-  color: white ;
+  color: white;
   font-weight: bold;
   border: ${({ color }) => `2px solid ${color}`};
   background: ${({ color }) => color};
